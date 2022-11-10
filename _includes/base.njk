@@ -13,8 +13,8 @@ title: Mile 70
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header class="container mx-auto flex justify-between items-center">
-      <h1 class="home font-bold text-green-600">
+    <header class="max-w-5xl mx-auto flex justify-between items-center px-2 pt-8 pb-4 border-b border-green-600">
+      <h1 class="home font-bold text-green-800 text-2xl">
         <a href="{{ '/' | url }}">{{ metadata.title }}</a>
       </h1>
 
@@ -22,15 +22,16 @@ title: Mile 70
       <nav>
         <ul class="nav flex justify-between items-center">
           {%- for entry in collections.all | eleventyNavigation %}
-            <li class="nav-item{% if entry.url == page.url %} nav-item-active font-bold{% endif %} pr-2">
+            <li class="nav-item{% if entry.url == page.url %} nav-item-active font-bold text-green-800{% endif %} pr-4">
               <a href="{{ entry.url | url }}">{{ entry.title }}</a>
             </li>
           {%- endfor %}
         </ul>
       </nav>
     </header>
-    <div class="container mx-auto">
+    <main class="max-w-5xl mx-auto py-4 px-2">
       {{content | safe}}
-    </div>
+    </main>
+    <footer class="max-w-5xl"></footer>
   </body>
 </html>
