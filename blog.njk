@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: Mile 70 Blog
+pagination:
+  data: contentfulBlogPosts.items
+  size: 5
+  alias: posts
+  generatePageOnEmptyData: false
+eleventyNavigation:
+  key: Blog
+  order: 2
+permalink: "blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+---
+
+<ol>
+  {%- for item in pagination.items %}
+    <a href="{{item.fields.title | slug}}" class="mb-10">
+      <h4>{{item.fields.title}}</h4>
+    </a>
+  {% endfor -%}
+</ol>

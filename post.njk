@@ -1,0 +1,19 @@
+---
+layout: base.njk
+pagination:
+    data: contentfulBlogPosts.items
+    size: 1
+    alias: post
+permalink: "blog/{{ post.fields.title | slug }}/"
+eleventyComputed:
+    title: "{{ post.fields.title }}"
+    datePosted: "{{ post.fields.datePosted}}"
+    author: "{{ post.fields.author}}"
+---
+
+<h1>Title: {{title}}
+  <h1>
+
+    <p>Date Posted: {{datePosted}}</p>
+
+    <p>Author: {{author}}</p>
