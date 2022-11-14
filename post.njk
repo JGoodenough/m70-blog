@@ -4,16 +4,16 @@ pagination:
     data: contentfulBlogPosts.items
     size: 1
     alias: post
-permalink: "blog/{{ post.fields.title | slug }}/"
+permalink: "blog/{{ post.fields.updatedAt | formatDate }}/{{ post.fields.title | slug }}/"
 eleventyComputed:
     title: "{{ post.fields.title }}"
     datePosted: "{{ post.fields.datePosted}}"
     author: "{{ post.fields.author}}"
 ---
 
-<h1>Title: {{title}}
+<h1 class="text-3xl font-bold mb-2">{{title}}
   <h1>
 
-    <p>Date Posted: {{datePosted}}</p>
+    <p class="text-sm font-semibold mb-8">{{datePosted | formatDate('dddd, MMM DD, YYYY')}} by: {{author}}</p>
 
-    <p>Author: {{author}}</p>
+    <p>{{post.fields.content | renderContentfulRichText | safe}}

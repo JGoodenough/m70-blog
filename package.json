@@ -13,9 +13,13 @@
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-navigation": "^0.3.5",
-    "dotenv": "^16.0.3"
+    "@contentful/rich-text-html-renderer": "^15.13.1",
+    "dotenv": "^16.0.3",
+    "i": "^0.3.7",
+    "npm": "^9.1.1"
   },
   "dependencies": {
-    "contentful": "^9.2.11"
+    "contentful": "^9.2.11",
+    "dayjs": "^1.11.6"
   }
 }
