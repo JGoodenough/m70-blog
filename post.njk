@@ -10,14 +10,17 @@ eleventyComputed:
     datePosted: "{{ post.fields.datePosted}}"
     author: "{{ post.fields.author}}"
 ---
-<a href="/blog" class="text-green-800 font-bold mb-16">Back to blog listing</a>
+<div class="mb-8">
+  {% set navBlog = collections.all | eleventyNavigation | getNavItemByKey('Blog') %}
+  <a href="{{navBlog.url}}" class="text-green-800 font-bold p-2 rounded-lg hover:bg-green-100">Back to blog listing</a>
+</div>
 
 <article>
-  <h1 class="text-3xl font-bold mb-2 font-serif">{{title}}
+  <h1 class="text-3xl font-bold mb-2 font-sans">{{title}}
     <h1>
 
-      <p class="text-sm font-semibold font-serif">{{datePosted | formatDate('dddd, MMM DD, YYYY')}}</p>
-      <p class="font-serif mb-8">by: {{author}}</p>
-      <p class="font-serif">{{post.fields.content | renderContentfulRichText | safe}}
+      <p class="text-sm font-semibold font-sans">{{datePosted | formatDate('dddd, MMM DD, YYYY')}}</p>
+      <p class="font-sans mb-8">by: {{author}}</p>
+      <p class="font-sans">{{post.fields.content | renderContentfulRichText | safe}}
 
       </article>

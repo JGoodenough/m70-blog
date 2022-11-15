@@ -1,6 +1,6 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
-const { formatDate } = require('./utils');
+const { formatDate, getNavItemByKey } = require('./utils');
 const { renderContentfulRichText } = require('./services/contentful');
 
 module.exports = function (eleventyConfig) {
@@ -8,4 +8,5 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('formatDate', formatDate);
   eleventyConfig.addFilter('renderContentfulRichText', renderContentfulRichText);
+  eleventyConfig.addFilter('getNavItemByKey', getNavItemByKey);
 }
