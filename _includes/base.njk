@@ -1,5 +1,5 @@
 ---
-title: Mile 70
+title: mile 70
 ---
 
 <!doctype html>
@@ -13,14 +13,14 @@ title: Mile 70
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header class="max-w-5xl mx-auto flex justify-between items-center px-2 pt-8 pb-4 border-b border-green-600">
+    <header class="font-sans max-w-5xl mx-auto flex justify-between items-center px-2 pt-8 pb-4 border-b border-green-600">
       <h1 class="home font-bold text-green-800 text-2xl">
         <a href="{{ '/' | url }}">{{ metadata.title }}</a>
       </h1>
 
       {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
       <nav>
-        <ul class="nav flex justify-between items-center">
+        <ul class="flex justify-between items-center">
           {%- for entry in collections.all | eleventyNavigation %}
             <li class="nav-item{% if entry.url == page.url %} nav-item-active font-bold text-green-800{% endif %} pr-4">
               <a href="{{ entry.url | url }}">{{ entry.title }}</a>
@@ -29,7 +29,7 @@ title: Mile 70
         </ul>
       </nav>
     </header>
-    <main class="max-w-5xl mx-auto py-4 px-2">
+    <main class="max-w-5xl mx-auto py-12 px-2">
       {{content | safe}}
     </main>
     <footer class="max-w-5xl"></footer>
