@@ -18,7 +18,6 @@ const renderContentfulRichText = (content) => {
 }
 
 module.exports = {
-  client,
   fetchContentfulEntries,
-  renderContentfulRichText
+  renderContentfulRichText,
 }
