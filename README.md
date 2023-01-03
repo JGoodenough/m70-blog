@@ -1,6 +1,6 @@
 # Mile 70 blog
 
-> A blog about ultra-running, climbing, surfing and any other adventurous outdoor activity.
+> A blog about ultra-running, climbing, surfing and any other adventurous outdoor activities.
 
 ## Tech Stack
 - [Eleventy](https://www.11ty.dev/)
