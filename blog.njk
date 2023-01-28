@@ -14,8 +14,8 @@ permalink: "blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 
 
 <ol class="grid grid-cols-1 gap-y-8" >
   {%- for item in pagination.items %}
-    <article class="grid" style="grid-template-columns: 25% 1fr;">
-      <div class="text-gray-400 self-center">
+    <article class="grid grid-cols-1 sm:grid-cols-[25%_1fr]">
+      <div class="text-gray-400 self-center px-4">
         {{item.fields.datePosted | formatDate('dddd &bull; MMM DD, YYYY') | safe}}
       </div>
       <a href="{{item.fields.datePosted | formatDate}}/{{item.fields.title | slug}}" class="flex flex-col space-y-5 items-start justify-center hover:bg-green-100 p-4 rounded-lg">
