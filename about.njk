@@ -6,4 +6,6 @@ eleventyNavigation:
   order: 3
 ---
 
-<p class="prose">{{contentfulPages.about.pageContent | renderContentfulRichText | safe}}</p>
+<div class="prose mx-auto text-justify">
+  {{contentfulPages.about.pageContent | renderContentfulRichText | safe}}
+</div>
