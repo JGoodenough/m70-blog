@@ -21,7 +21,8 @@ title: mile 70
       .home-hero,
       .nav-links,
       .nav-logo,
-      .nav-logo__sub-line {
+      .nav-logo__sub-line,
+      a {
         font-family: 'Indie Flower', cursive;
       }
     </style>
@@ -41,8 +42,8 @@ title: mile 70
       <nav>
         <ul class="nav-links flex justify-between items-center">
           {%- for entry in collections.all | eleventyNavigation %}
-            <li class="{% if entry.url == page.url %}font-bold text-green-800{% endif %} pr-4 font-lg">
-              <a href="{{ entry.url | url }}" class="hover:bg-green-100 rounded-lg p-2">{{ entry.title }}</a>
+            <li class="{% if entry.url == page.url %}font-extrabold text-green-800{% endif %} pr-4 font-lg">
+              <a href="{{ entry.url | url }}" class="{% if entry.url == page.url %}bg-green-100 rounded-lg px-4{% endif %} hover:bg-green-100 rounded-lg px-4 py-2">{{ entry.title }}</a>
             </li>
           {%- endfor %}
           {# <li class="pr-4">
