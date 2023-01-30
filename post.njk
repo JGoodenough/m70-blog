@@ -10,16 +10,22 @@ eleventyComputed:
     datePosted: "{{ post.fields.datePosted}}"
     author: "{{ post.fields.author}}"
 ---
-<div class="mb-8">
-  {% set navBlog = collections.all | eleventyNavigation | getNavItemByKey('Blog') %}
-  <a href="{{navBlog.url}}" class="text-green-800 font-bold p-2 rounded-lg hover:bg-green-100">&lt; All posts</a>
-</div>
 
-<article class="prose-stone">
-  <h1 class="text-3xl font-bold mb-2 font-sans">{{title}}</h1>
+<article>
 
-  <p class="text-sm font-semibold font-sans">{{datePosted | formatDate('dddd, MMM DD, YYYY')}}</p>
-  <p class="font-sans mb-8">by: {{author}}</p>
-  <p class="font-sans">{{post.fields.content | renderContentfulRichText | safe}}</p>
+  <div class="prose mx-auto text-justify">
+    <div class="mb-8">
+      {% set navBlog = collections.all | eleventyNavigation | getNavItemByKey('Blog') %}
+      <a href="{{navBlog.url}}" class="text-green-800 font-bold p-2 rounded-lg hover:bg-green-100 no-underline">&lt; All posts</a>
+    </div>
+
+    <h1 class="text-3xl font-bold mb-2 font-sans">{{title}}</h1>
+
+    <p class="text-sm font-semibold font-sans">{{datePosted | formatDate('dddd, MMM DD, YYYY')}}</p>
+    <p class="font-sans mb-8">by: {{author}}</p>
+  </div>
+  <div class="prose mx-auto text-justify">
+    {{post.fields.content | renderContentfulRichText | safe}}
+  </div>
 
 </article>
