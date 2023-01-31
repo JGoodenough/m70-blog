@@ -4,8 +4,8 @@
   "description": "m70 blog using eleventy",
   "main": "index.js",
   "scripts": {
-    "prod": "npx @11ty/eleventy & tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --minify",
-    "start": "npx @11ty/eleventy --serve & tailwindcss -i ./styles.css -o ./_site/styles.css --watch",
+    "prod": "npx @11ty/eleventy & npx tailwindcss -i ./src/css/tailwind.css -o ./_site/css/style.css --minify",
+    "start": "npx @11ty/eleventy --serve & npx tailwindcss -i ./styles.css -o ./_site/styles.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
