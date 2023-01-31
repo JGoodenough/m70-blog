@@ -6,7 +6,8 @@ const { renderContentfulRichText } = require('./services/contentful');
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-  eleventyConfig.addPassthroughCopy({ 'assets/favico': '/' });
+  eleventyConfig.addPassthroughCopy('assets/favico');
+  eleventyConfig.addPassthroughCopy('styles.css');
 
   eleventyConfig.addFilter('formatDate', formatDate);
   eleventyConfig.addFilter(
