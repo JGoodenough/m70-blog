@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.home-hero,
+.nav-links,
+.nav-logo,
+.nav-logo__sub-line,
+a {
+  font-family: 'Indie Flower', cursive;
+}
