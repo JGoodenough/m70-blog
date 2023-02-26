@@ -8,6 +8,7 @@ permalink: "blog/{{ post.fields.datePosted | formatDate }}/{{ post.fields.title 
 eleventyComputed:
     title: "{{ post.fields.title }}"
     datePosted: "{{ post.fields.datePosted}}"
+    updatedOn: "{{post.fields.updatedOn}}"
     author: "{{ post.fields.author}}"
 ---
 
@@ -21,7 +22,13 @@ eleventyComputed:
 
     <h1 class="text-3xl font-bold mb-2 font-sans">{{title}}</h1>
 
-    <p class="text-sm font-semibold font-sans mb-0">{{datePosted | formatDate('dddd, MMM DD, YYYY')}}</p>
+    {%if updatedOn%}
+      <p class="text-sm font-semibold font-sans mb-0">Updated On: {{updatedOn | formatDate('dddd, MMM DD, YYYY')}}</p>
+    {% endif %}
+    <p class="text-sm font-semibold font-sans mb-0">
+      {%if updatedOn%}Original Date Posted:{% endif %}
+      {{datePosted | formatDate('dddd, MMM DD, YYYY')}}
+    </p>
     <p class="font-sans mb-8 mt-0">by: {{author}}</p>
   </div>
   <div class="prose mx-auto text-justify">
