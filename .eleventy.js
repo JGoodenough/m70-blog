@@ -8,6 +8,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('assets/favico');
   eleventyConfig.addPassthroughCopy('styles.css');
+  eleventyConfig.addPassthroughCopy('ads.txt');
 
   eleventyConfig.addFilter('formatDate', formatDate);
   eleventyConfig.addFilter('formatTime', formatTime);
