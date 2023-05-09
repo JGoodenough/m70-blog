@@ -13,7 +13,7 @@ eleventyNavigation:
 
 <h2 class="text-center font-semibold text-2xl my-8" style="font-family: 'Indie Flower';">Latest Post</h2>
 <article class="flex items-center justify-center">
-  <a href="{{contentfulBlogPosts.items[0].fields.datePosted | formatDate}}/{{contentfulBlogPosts.items[0].fields.title | slug}}" class="flex flex-col space-y-5 items-start justify-center hover:bg-green-100 p-4 rounded-lg">
+  <a href="blog/{{contentfulBlogPosts.items[0].fields.datePosted | formatDate}}/{{contentfulBlogPosts.items[0].fields.title | slug}}" class="flex flex-col space-y-5 items-start justify-center hover:bg-green-100 p-4 rounded-lg">
     <h4 class="font-sans font-bold text-lg">
       {{contentfulBlogPosts.items[0].fields.title}}</h4>
 
