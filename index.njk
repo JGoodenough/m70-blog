@@ -11,6 +11,23 @@ eleventyNavigation:
   who want to push beyond mediocrity both mentally and physically.
 </h1>
 
+{% set loginform %}
+{% set loginFormContent %}
+<p class="text-center">Check out this <a href="/posts/post-preview/">post preview</a>!</p>
+{% endset %}
+{% include "components/loginform.njk" %}
+{% endset %}
+
+{% edge "njk", {loginform: loginform} %}
+{% if isUser %}
+  <aside class="section text-center">
+    <a href="/posts/" class="button button--large">Posts Archive</a>
+  </aside>
+{% else %}
+  {{ loginform | safe }}
+{% endif %}
+{% endedge %}
+
 <h2 class="text-center font-semibold text-2xl my-8">Latest Post</h2>
 <article class="flex items-center justify-center">
   <a href="blog/{{contentfulBlogPosts.items[0].fields.datePosted | formatDate}}/{{contentfulBlogPosts.items[0].fields.title | slug}}" class="flex flex-col space-y-5 items-start justify-center hover:bg-green-100 p-4 rounded-lg">

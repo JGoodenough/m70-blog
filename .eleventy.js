@@ -1,3 +1,4 @@
+const { EleventyEdgePlugin } = require('@11ty/eleventy');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
 const { formatDate, getNavItemByKey, formatTime } = require('./utils');
@@ -21,4 +22,6 @@ module.exports = function (eleventyConfig) {
     return pages.find((page) => page.fields.slug === slug);
   });
   eleventyConfig.amendLibrary('md', (mdLib) => mdLib.enable('code'));
+  // Opt-in to 11ty Edge
+  eleventyConfig.addPlugin(EleventyEdgePlugin);
 };

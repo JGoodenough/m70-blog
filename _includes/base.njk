@@ -54,5 +54,25 @@ title: mile 70
       {{content | safe}}
     </main>
     <footer class="max-w-5xl"></footer>
+    {% set supabaseCDN %}
+    {% include "auth/supabase-cdn.njk" %}
+    {% endset %}
+
+    {% set signoutScript %}
+    {% include "auth/supabase.njk" %}
+    {% include "auth/js/signoutbtn.js" %}
+    {% endset %}
+
+    {% edge "njk", {
+      supabaseCDN: supabaseCDN,
+      signoutScript: signoutScript
+    } %}
+    {% if isUser %}
+      {{ supabaseCDN | safe }}
+      <script>
+        {{ signoutScript | safe }}
+      </script>
+    {% endif %}
+    {% endedge %}
   </body>
 </html>
