@@ -20,4 +20,5 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('getContenfulPageBySlug', (pages, slug) => {
     return pages.find((page) => page.fields.slug === slug);
   });
+  eleventyConfig.amendLibrary('md', (mdLib) => mdLib.enable('code'));
 };
